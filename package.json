@@ -2,6 +2,7 @@
   "name": "howl",
   "version": "0.1.0",
   "private": true,
+  "main": "./lib/index.js",
   "dependencies": {
     "express": "^4.16.4",
     "react": "^16.6.3",
@@ -12,7 +13,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "serve": "node ./lib/index.js"
   },
   "eslintConfig": {
     "extends": "react-app"
