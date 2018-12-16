@@ -1,25 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheckCircle, faSpinner, faExclamationTriangle } from '@fortawesome/free-solid-svg-icons'
+import Form from './Form';
+import Tests from './Tests'
 import './App.css';
+library.add([faCheckCircle, faSpinner, faExclamationTriangle])
+
+const AppStyle = {
+  'display': 'flex',
+  'flex-direction': 'row',
+  'justify-content': 'space-evenly' 
+}
 
 class App extends Component {
   render() {
-    return (
+      return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Form />
+        <div style={AppStyle}>
+          <Tests url="/api/data/clean"/>
+          <Tests url="/api/data/bad"/>
+        </div>
       </div>
     );
   }
